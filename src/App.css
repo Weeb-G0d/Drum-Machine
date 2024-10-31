@@ -5,11 +5,11 @@ html, body {
   display: flex; /* Use flexbox */
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
-  background-color: black; /* Optional background color */
+  background-color: rgb(38, 35, 52); /* Optional background color */
 }
 
 .container {
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: column; /* Stack elements vertically */
   align-items: center; /* Center items horizontally */
@@ -18,7 +18,7 @@ html, body {
   background-color: black; /* Background color of the drum machine */
   border-radius: 8px; /* Rounded corners */
   border: 2px white solid;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
+  box-shadow: 5px 4px 10px rgba(120, 175, 48, 0.2); /* Optional shadow for depth */
 }
 
 .whole-drum {
@@ -29,21 +29,36 @@ html, body {
 
 #display {
   margin: 20px 0; /* Space above and below the display */
-  font-size: 24px; /* Larger font size for visibility */
+  font-size: 20px; /* Larger font size for visibility */
   text-align: center; /* Center text */
+  height: 20px;
 }
 .drum-pad {
-  width: 100px;
-  height: 100px;
-  border: 2px solid #2f2f2f;
-  background-color: #3f3f3f;
-  color: white;
-  font-size: 20px;
+  font-size: 24px; /* Increase the font size */
+  padding: 15px 30px; /* Add padding for a larger click area */
+  width: 100px; /* Set a fixed width for the buttons */
+  height: 60px; /* Set a fixed height for the buttons */
+  margin: 10px; /* Add some space between buttons */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Round the corners */
+  background-color: #4b3f6a; /* Background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Change cursor to pointer */
   border-radius: 8px;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.264);
+  box-shadow: 10px 10px 10px rgba(160, 154, 87, 0.264);
   transition: all 0.2s ease-in-out;
 }
 
 .drum-pad:active {
   transform: translate(4px, 4px);
+  border: 2px solid blue;
+}
+
+.HnP{
+  display: flex; /* Enables flexbox */
+  align-items: center;
+}
+.topright{
+  margin-top: 10px; /* Optional: Adds space from the top */
+  margin-left: 5px;
 }

@@ -137,7 +137,7 @@ const [count, setCount] = useState<string>("");
         
         const play = document.getElementById(clip.keyTrigger) as HTMLAudioElement;
         
-        
+        document.getElementById("drum-" + clip.keyTrigger)?.focus();
         play?.play().catch(console.error);
         setCount(clip.description);
         }
@@ -157,14 +157,17 @@ const [count, setCount] = useState<string>("");
   
   return (
     <div className="container" id="drum-machine">
+      <p style={{fontSize:10 }}><i><b>(Use your keyboard or mouse to play)</b></i></p>
+      <button onClick={change} className='topright'>{onoroff? "Switch off":"Switch on"}</button>
       <h1>Drum Machine</h1>
-      <button onClick={hnp}>{hnnp ? "Heater Kit":"Smooth Piano Kit"}</button>
-      <i>{onoroff? "The Drum is ON": "The Drum is OFF"}</i>
-      <br></br>
-      <button onClick={change}>{onoroff? "Turn off":"Turn on"}</button>
+      <div className="HnP">
+      <p>You are on:</p><button onClick={hnp}>{hnnp ? <i>Heather Kit (tap to change)</i>:<i>Smooth Piano Kit (tap to change)</i>}</button>
+      </div>
+      
+      
      
       <div id="display"> {onoroff? count : ""}</div>
-      <div className="whole-drum" id="display">
+      <div className="whole-drum">
        
        { audioClips.map((clips)=>(
         <Drum audioClip={clips} key={clips.keyTrigger} onPlay={setCount} change={onoroff}/>
